@@ -1,13 +1,14 @@
-
 import './App.css'
-import Heder from './Component/Heder';
+import Header from './components/Header/Header';
+import HomeHero from './components/HomeHero/HomeHero';
+
 function App() {
- 
   return (
-    <>
-      <Heder />
+    <div className="app-page" dir="rtl">
+      <Header />
+      <HomeHero />
       
-    </>
+    </div>
   )
 }
 
