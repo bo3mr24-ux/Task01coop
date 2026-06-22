@@ -32,13 +32,13 @@ export default function AgendaSection() {
   return (
     <section id="agenda" className="agenda-section" dir="rtl">
       <div className="container">
-        <header className="agenda-head text-center mb-5">
-          <span className="agenda-accent" aria-hidden="true" />
+
+        <header className="agenda-head">
           <h2 className="agenda-title">الأجندة</h2>
+          <span className="agenda-accent" aria-hidden="true" />
         </header>
 
-     
-        <div className="accordion agenda-accordion mx-auto" id="agendaAccordion">
+        <div className="accordion agenda-accordion" id="agendaAccordion">
           {DAYS.map((day, index) => {
             const isFirst = index === 0;
             return (
@@ -79,6 +79,7 @@ export default function AgendaSection() {
             );
           })}
         </div>
+
       </div>
     </section>
   );

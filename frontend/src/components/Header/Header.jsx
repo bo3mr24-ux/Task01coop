@@ -30,7 +30,7 @@ const NAV_ITEMS = [
 // أزرار التسجيل كمكوّنات DgaButtonV2 رسمية، تظهر مباشرةً داخل شريط التنقّل (آخر عنصرين).
 const REGISTER_ACTIONS = [
   { label: "تسجيل الأفراد", to: "/individual-register", variant: "primary" },
-  { label: "تسجيل الرعاة", to: "/sponsor-register", variant: "secondary-outline" },
+  { label: "تسجيل الرعاة", to: "/sponsor-register", variant: "primary" },
 ];
 
 // رابط مفرد: داخلي عبر RouterNavLink (تفعيل تلقائي حسب المسار) أو <a> للهاش.
@@ -128,14 +128,14 @@ export default function Header() {
           background: var(--dga-surface);
           border-bottom: 1px solid var(--dga-border);
           box-shadow: 0 1px 2px rgba(16,25,40,.04);
-          padding-block: .5rem;
+          padding-block: 3px;
         }
         .dga-header .dga-bar {
           display: flex; align-items: center; flex-wrap: wrap;
           gap: .5rem 1rem; width: 100%;
         }
         .dga-header .navbar-brand { flex: 0 0 auto; }
-        .dga-header .navbar-brand img { height: 50px; width: auto; object-fit: contain; }
+        .dga-header .navbar-brand img { height: 60px; width: auto; object-fit: contain; }
 
         /* قائمة التنقّل: صف أفقي يلتفّ بدل الاختفاء، تظهر كل العناصر دائماً */
         .dga-header .dga-nav {
@@ -200,7 +200,7 @@ export default function Header() {
         /* الشاشات المتوسطة/الصغيرة: تصغير لطيف ليبقى كل شيء ظاهراً دون زر مخفي */
         @media (max-width: 1199.98px) {
           .dga-header .dga-nav-link { font-size: .88rem; padding: .5rem .5rem; }
-          .dga-header .navbar-brand img { height: 44px; }
+          .dga-header .navbar-brand img { height: 53px; }
         }
         @media (max-width: 991.98px) {
           .dga-header .dga-bar { justify-content: center; }

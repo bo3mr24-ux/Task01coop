@@ -1,91 +1,78 @@
-/* ===== قسم عن المؤتمر (تصميم فاتح وهادئ) ===== */
+/* ===== قسم عن المؤتمر — خلفية بيضاء، عمودان ===== */
 .about-section {
-  position: relative;
+  padding: 90px 0 100px;
+  background-color: #ffffff;
   font-family: var(--dga-font);
-  background-color: var(--dga-bg-mint);
-  padding-top: 80px;
-  padding-bottom: 90px;
+}
+
+/* ===== عمود الصورة ===== */
+.about-img-wrap {
+  border-radius: var(--dga-radius);
   overflow: hidden;
-  border-bottom: 1px solid var(--dga-border);
+  box-shadow: var(--dga-shadow-md);
+  aspect-ratio: 4 / 3;
 }
 
-/* نقش مائي/ري زخرفي خفيف جداً في الخلفية */
-.about-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='48' viewBox='0 0 140 48'%3E%3Cpath d='M0 24 C 23 4 47 4 70 24 S 117 44 140 24' fill='none' stroke='%231b8354' stroke-width='2'/%3E%3C/svg%3E");
-  background-size: 140px 48px;
-  opacity: 0.05;
-  pointer-events: none;
+.about-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.about-section > .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* ===== العنوان ===== */
-.about-section-head {
-  text-align: center;
-  margin-bottom: 2.75rem;
+/* ===== عمود النص ===== */
+.about-text-wrap {
+  text-align: right;
 }
 
 .about-section-title {
-  margin: 0;
-  color: var(--dga-heading);
+  margin: 0 0 1.1rem;
+  color: #111111;
   font-weight: 700;
   font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  line-height: 1.3;
 }
 
 .about-section-divider {
   display: block;
-  width: 72px;
+  width: 64px;
   height: 4px;
-  margin: 1.1rem auto 0;
+  margin: 0 0 1.75rem;
   border-radius: 999px;
   background-color: var(--dga-primary);
 }
 
-/* ===== حاوية النص (بطاقة بيضاء ناعمة) ===== */
-.about-section-card {
-  max-width: 860px;
-  margin: 0 auto;
-  background-color: var(--dga-surface);
-  border: 1px solid var(--dga-border);
-  border-radius: var(--dga-radius);
-  box-shadow: var(--dga-shadow);
-  padding: 3rem 3.25rem;
-}
-
 .about-section-text {
-  margin: 0;
-  color: var(--dga-text);
-  text-align: center;
-  font-size: clamp(1.02rem, 1.4vw, 1.2rem);
+  margin: 0 0 2.25rem;
+  color: #333333;
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
   font-weight: 400;
-  line-height: 2.2;
+  line-height: 2.15;
 }
 
 /* ===== الاستجابة ===== */
 @media (max-width: 991.98px) {
   .about-section {
-    padding-top: 60px;
-    padding-bottom: 70px;
+    padding: 65px 0 75px;
   }
 
-  .about-section-card {
-    padding: 2.25rem 1.75rem;
+  .about-img-wrap {
+    max-width: 540px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 575.98px) {
-  .about-section-head {
-    margin-bottom: 2rem;
+  .about-section {
+    padding: 50px 0 60px;
+  }
+
+  .about-section-title {
+    font-size: 1.75rem;
   }
 
   .about-section-text {
-    line-height: 2.05;
-    text-align: right;
+    font-size: 1rem;
+    line-height: 2;
   }
 }

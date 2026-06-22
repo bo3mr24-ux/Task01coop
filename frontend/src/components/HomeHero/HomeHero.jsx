@@ -53,7 +53,7 @@ export default function HomeHero() {
 
         <div className="hero-actions">
           <div className="hero-actions-row">
-            <Link to="/individual-register" className="dga-btn dga-btn-primary hero-btn">
+            <Link to="/individual-register" className="dga-btn dga-btn-outline hero-btn">
               تسجيل الأفراد
             </Link>
             <Link to="/sponsor-register" className="dga-btn dga-btn-outline hero-btn">

@@ -3090,19 +3090,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "C:\\Users\\AboOo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\الريTask\\Task01\\Task01\\Task01.csproj",
+      "projectUniqueName": "C:\\Coop\\Task01coop\\Task01.csproj",
       "projectName": "Task01",
-      "projectPath": "C:\\Users\\user\\Desktop\\الريTask\\Task01\\Task01\\Task01.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\الريTask\\Task01\\Task01\\obj\\",
+      "projectPath": "C:\\Coop\\Task01coop\\Task01.csproj",
+      "packagesPath": "C:\\Users\\AboOo\\.nuget\\packages\\",
+      "outputPath": "C:\\Coop\\Task01coop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\AboOo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
