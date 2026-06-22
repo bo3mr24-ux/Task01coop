@@ -1,0 +1,290 @@
+/* =========================================================
+   لوحة تحكم المؤتمر — تصميم لوحة إدارية نظيف (RTL)
+   يعتمد على متغيّرات الهوية الرسمية (DGA) المعرّفة في theme.css
+   ========================================================= */
+
+.admin-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background: var(--dga-bg-soft, #f9fafb);
+  color: var(--dga-text, #384250);
+  font-family: var(--dga-font, "IBM Plex Sans Arabic", system-ui, sans-serif);
+}
+
+/* ===== الشريط الجانبي (يمين الشاشة في RTL) ===== */
+.admin-sidebar {
+  flex: 0 0 264px;
+  width: 264px;
+  background: var(--dga-surface, #fff);
+  border-inline-start: 1px solid var(--dga-border, #e5e7eb);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1rem;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.25rem 0.5rem 1rem;
+  border-bottom: 1px solid var(--dga-border, #e5e7eb);
+  margin-bottom: 1rem;
+}
+.admin-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--dga-primary, #1b8354);
+  color: #fff;
+  font-size: 1.05rem;
+}
+.admin-brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+.admin-brand-title { font-weight: 700; color: var(--dga-heading, #12393c); font-size: 0.98rem; }
+.admin-brand-sub { font-size: 0.74rem; color: var(--dga-muted, #6c727e); }
+
+.admin-nav { display: flex; flex-direction: column; gap: 0.25rem; }
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  text-align: start;
+  padding: 0.7rem 0.85rem;
+  border: 0;
+  background: transparent;
+  border-radius: 10px;
+  color: var(--dga-text, #384250);
+  font-size: 0.93rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.16s ease, color 0.16s ease;
+}
+.admin-nav-link:hover { background: var(--dga-primary-soft, #f3fcf6); color: var(--dga-primary, #1b8354); }
+.admin-nav-link.is-active {
+  background: var(--dga-primary, #1b8354);
+  color: #fff;
+  font-weight: 600;
+}
+.admin-nav-link .admin-nav-icon { font-size: 1.05rem; display: inline-flex; }
+
+.admin-sidebar-foot {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--dga-border, #e5e7eb);
+}
+.admin-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--dga-muted, #6c727e);
+  text-decoration: none;
+}
+.admin-back-link:hover { color: var(--dga-primary, #1b8354); }
+
+/* ===== منطقة المحتوى ===== */
+.admin-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 1.5rem clamp(1rem, 3vw, 2.25rem) 3rem;
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.admin-topbar h1 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 700;
+  color: var(--dga-heading, #12393c);
+}
+.admin-topbar-sub { font-size: 0.85rem; color: var(--dga-muted, #6c727e); margin: 0.15rem 0 0; }
+
+/* زر فتح القائمة على الجوال */
+.admin-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--dga-border-strong, #d2d6db);
+  background: #fff;
+  color: var(--dga-heading, #12393c);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ===== البطاقات (نظرة عامة) ===== */
+.admin-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.admin-stat-card {
+  background: var(--dga-surface, #fff);
+  border: 1px solid var(--dga-border, #e5e7eb);
+  border-radius: var(--dga-radius, 14px);
+  box-shadow: var(--dga-shadow, 0 6px 22px rgba(16, 25, 40, 0.06));
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.admin-stat-icon {
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  background: var(--dga-primary-soft, #f3fcf6);
+  color: var(--dga-primary, #1b8354);
+}
+.admin-stat-meta { display: flex; flex-direction: column; min-width: 0; }
+.admin-stat-value { font-size: 1.5rem; font-weight: 700; color: var(--dga-heading, #12393c); line-height: 1.1; }
+.admin-stat-label { font-size: 0.85rem; color: var(--dga-muted, #6c727e); }
+
+/* ===== البطاقة العامة لكل قسم ===== */
+.admin-panel {
+  background: var(--dga-surface, #fff);
+  border: 1px solid var(--dga-border, #e5e7eb);
+  border-radius: var(--dga-radius, 14px);
+  box-shadow: var(--dga-shadow, 0 6px 22px rgba(16, 25, 40, 0.06));
+  padding: clamp(1rem, 2.5vw, 1.6rem);
+}
+.admin-panel + .admin-panel { margin-top: 1.25rem; }
+.admin-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+.admin-panel-title { margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--dga-heading, #12393c); }
+
+/* ===== الجداول ===== */
+.admin-table-wrap { overflow-x: auto; border-radius: var(--dga-radius-sm, 10px); }
+.admin-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; white-space: nowrap; }
+.admin-table thead th {
+  background: var(--dga-bg-mint, #f4faf7);
+  color: var(--dga-heading, #12393c);
+  font-weight: 600;
+  text-align: start;
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--dga-border, #e5e7eb);
+}
+.admin-table tbody td {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--dga-border, #e5e7eb);
+  color: var(--dga-text, #384250);
+}
+.admin-table tbody tr:hover { background: var(--dga-primary-soft, #f3fcf6); }
+.admin-table tbody tr:last-child td { border-bottom: 0; }
+
+.admin-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--dga-primary-100, #dff6e7);
+  color: var(--dga-primary-strong, #166a45);
+}
+
+/* ===== تنبيه الحفظ ===== */
+.admin-saved-alert {
+  margin-top: 1rem;
+  background: var(--dga-primary-soft, #f3fcf6);
+  border: 1px solid var(--dga-primary-100, #dff6e7);
+  color: var(--dga-primary-strong, #166a45);
+  border-radius: var(--dga-radius-sm, 10px);
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ===== عناصر الأجندة / المتحدثين القابلة للتحرير ===== */
+.admin-editable-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--dga-border, #e5e7eb);
+}
+.admin-editable-row:last-child { border-bottom: 0; }
+.admin-editable-row .form-control { flex: 1 1 auto; }
+
+.admin-icon-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  border: 1px solid var(--dga-border-strong, #d2d6db);
+  background: #fff;
+  color: var(--dga-muted, #6c727e);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.admin-icon-btn:hover { color: var(--dga-primary, #1b8354); border-color: var(--dga-primary, #1b8354); }
+.admin-icon-btn.danger:hover { color: #d92d20; border-color: #f4a8a0; background: #fef3f2; }
+
+.admin-day-block + .admin-day-block { margin-top: 1.5rem; }
+.admin-day-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dga-primary-strong, #166a45);
+  margin-bottom: 0.75rem;
+}
+
+.admin-empty {
+  text-align: center;
+  color: var(--dga-muted, #6c727e);
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* ===== الخلفية المعتمة للقائمة على الجوال ===== */
+.admin-backdrop { display: none; }
+
+/* ===== الاستجابة ===== */
+@media (max-width: 1100px) {
+  .admin-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 992px) {
+  .admin-menu-toggle { display: inline-flex; }
+  .admin-sidebar {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-end: 0;
+    z-index: 1050;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    box-shadow: -10px 0 30px rgba(16, 25, 40, 0.12);
+  }
+  .admin-shell.sidebar-open .admin-sidebar { transform: translateX(0); }
+  .admin-shell.sidebar-open .admin-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(16, 25, 40, 0.4);
+    z-index: 1040;
+  }
+}
+@media (max-width: 560px) {
+  .admin-cards { grid-template-columns: 1fr; }
+}

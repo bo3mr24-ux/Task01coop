@@ -1,20 +1,13 @@
 import { useRef } from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { getSpeakers } from "../../data/conferenceStore";
 import "./SpeakersSection.css";
-
-const SPEAKERS = [
-  { name: "محمد", title: "   المائية", image: "" },
-  { name: "عمر", title: "استشاري تقنيات الري الحديثة", image: "" },
-  { name: "د. خالد ", title: " مهندس  ", image: "" },
-  { name: "", title: "مدير مشاريع  ", image: "" },
-  { name: "عبدالله", title: "مهندس  ", image: "" },
-  { name: "سعد", title: "مهندس   ", image: "" },
-];
 
 const getInitials = (name) =>
   (name || "").replace(/^(د\.|م\.|أ\.)\s*/, "").trim().charAt(0) || "؟";
 
-export default function SpeakersSection({ speakers = SPEAKERS }) {
+// قائمة المتحدثين تُقرأ من المحتوى القابل للتحرير (localStorage) مع قيمة افتراضية.
+export default function SpeakersSection({ speakers = getSpeakers() }) {
   const trackRef = useRef(null);
 
   const scrollByCards = (direction) => {

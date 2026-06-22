@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { getConferenceStartISO } from "../../data/conferenceStore";
 import "./CountdownTimer.css";
 
 
-const CONFERENCE_DATE = "2026-11-04T09:00:00"; 
+// التاريخ الافتراضي يُقرأ من المحتوى القابل للتحرير (localStorage) مع قيمة احتياطية.
+const CONFERENCE_DATE = getConferenceStartISO() || "2026-11-04T09:00:00";
 
 const UNITS = [
   { key: "days", label: "يوم" },

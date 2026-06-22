@@ -1,34 +1,9 @@
+import { getAgenda } from "../../data/conferenceStore";
 import "./AgendaSection.css";
 
-const DAYS = [
-  {
-    id: "day1",
-    label: "اليوم الأول",
-    date: "04 فبراير 2026",
-    items: [
-      "التسجيل",
-      "الافتتاح",
-      "مواجهة مخاطر المناخ وتخفيف آثارها على موارد المياه",
-      "استراتيجيات فعالة لإعادة استخدام المياه المعالجة وحوكمتها",
-      "ابتكارات رائدة في تقنيات الري نحو استدامة الموارد المائية",
-      "استراتيجيات الحوكمة الفعالة لتمويل قطاع الري رؤى للمستقبل",
-    ],
-  },
-  {
-    id: "day2",
-    label: "اليوم الثاني",
-    date: "05 فبراير 2026",
-    items: [
-      "التسجيل",
-      "الجلسة الأولى",
-      "الجلسة الثانية",
-      "جلسة نقاش",
-      "التوصيات الختامية",
-    ],
-  },
-];
-
 export default function AgendaSection() {
+  // الأجندة تُقرأ من المحتوى القابل للتحرير (localStorage) مع قيمة افتراضية.
+  const DAYS = getAgenda();
   return (
     <section id="agenda" className="agenda-section" dir="rtl">
       <div className="container">
