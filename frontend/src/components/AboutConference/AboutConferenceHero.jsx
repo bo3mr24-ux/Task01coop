@@ -1,3 +1,4 @@
+import heroBg from "../../assets/irrr.jpg";
 import "./AboutConference.css";
 
 const PATTERN_LINES = Array.from({ length: 36 }, (_, i) => {
@@ -14,7 +15,7 @@ const PATTERN_LINES = Array.from({ length: 36 }, (_, i) => {
 
 export default function AboutConferenceHero() {
   return (
-    <section id="about" className="about-hero" dir="rtl">
+    <section id="about" className="about-hero" dir="rtl" style={{ "--about-hero-bg": `url(${heroBg})` }}>
       <div className="about-hero-pattern" aria-hidden="true">
         <svg
           viewBox="0 0 470 800"

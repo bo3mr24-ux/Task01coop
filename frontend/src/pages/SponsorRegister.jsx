@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import heroBg from "../assets/irrr.jpg";
 import "./SponsorRegister.css";
 
 const PATTERN_LINES = Array.from({ length: 36 }, (_, i) => {
@@ -75,7 +76,7 @@ export default function SponsorRegister() {
       <Header />
 
       {/* ===== الهيرو ===== */}
-      <section className="sponsor-hero" dir="rtl">
+      <section className="sponsor-hero" dir="rtl" style={{ "--sponsor-hero-bg": `url(${heroBg})` }}>
         <div className="sponsor-hero-pattern" aria-hidden="true">
           <svg viewBox="0 0 470 800" preserveAspectRatio="xMaxYMid slice" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" stroke="#9ed6c4" strokeWidth="1.4" strokeLinecap="round">

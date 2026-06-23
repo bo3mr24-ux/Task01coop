@@ -1,0 +1,24 @@
+/* ===== خلفية موحّدة لصفحات المؤتمر ===== */
+.conf-bg-page {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('../assets/irrr.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* شريط التنقّل: شفافية خفيفة مع ضبابية للاندماج مع الخلفية */
+.conf-bg-page .dga-header #dgaNavbar {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* الأجهزة المحمولة: تعطيل fixed (مشكلة شائعة في iOS) */
+@media (max-width: 767.98px) {
+  .conf-bg-page {
+    background-attachment: scroll;
+  }
+}

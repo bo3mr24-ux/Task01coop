@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { DgaTextInput, DgaTextarea, DgaButtonV2, DgaInlineAlert } from "platformscode-new-react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import heroBg from "../assets/irrr.jpg";
 import "./IndividualRegister.css";
 
 const PATTERN_LINES = Array.from({ length: 36 }, (_, i) => {
@@ -72,7 +73,7 @@ export default function IndividualRegister() {
     <div className="app-page" dir="rtl">
       <Header />
 
-      <section className="individual-hero" dir="rtl">
+      <section className="individual-hero" dir="rtl" style={{ "--individual-hero-bg": `url(${heroBg})` }}>
         <div className="individual-hero-pattern" aria-hidden="true">
           <svg viewBox="0 0 470 800" preserveAspectRatio="xMaxYMid slice" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" stroke="#9ed6c4" strokeWidth="1.4" strokeLinecap="round">
