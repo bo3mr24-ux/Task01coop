@@ -40,9 +40,7 @@ export default function AboutConferenceSection() {
             </div>
           </div>
         </div>
-        <div className="about-section-card">
-          <p className="about-section-text">{aboutText}</p>
-        </div>
+        
       </div>
     </section>
   );

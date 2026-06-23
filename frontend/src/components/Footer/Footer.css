@@ -1,62 +1,68 @@
-/* ===== الفوتر (خلفية خضراء رسمية بأسلوب سعودي) ===== */
+/* ===== الفوتر (أسلوب المنصات الرقمية السعودية - خلفية خضراء داكنة رسمية) ===== */
 .site-footer {
-  font-family: var(--dga-font);
-  /* أخضر داكن احترافي مع تدرّج خفيف */
-  background: linear-gradient(180deg, #145c3d 0%, #0f5132 100%);
-  color: rgba(255, 255, 255, 0.85);
-  padding-top: 64px;
-  border-top: 4px solid #1b8354;
+  font-family: var(--dga-font, inherit);
+  /* أخضر سعودي داكن مع تدرّج خفيف */
+  background: linear-gradient(180deg, #0c5a36 0%, #073d24 100%);
+  color: rgba(255, 255, 255, 0.82);
+  padding-top: 56px;
+  /* خط أخضر فاتح علوي */
+  border-top: 3px solid #1f9d5f;
 }
 
-/* ===== الأعمدة (شبكة Bootstrap) ===== */
+/* ===== المنطقة العلوية ===== */
+.footer-top {
+  padding-bottom: 40px;
+}
+
 .footer-col {
   min-width: 0;
 }
 
-/* نفس شعار الهيدر (Main_Logo) داخل بطاقة بيضاء ليبقى واضحاً فوق الأخضر */
+/* ===== الشعار والوصف ===== */
 .footer-logo-chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 0.6rem 0.9rem;
-  margin-bottom: 1.1rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 1.2rem;
+  box-shadow: none;
 }
 
 .footer-logo {
-  height: 60px;
+  height: 84px;
   width: auto;
   object-fit: contain;
   display: block;
 }
 
 .footer-brand-title {
-  margin: 0 0 0.4rem;
-  font-size: 1.1rem;
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  line-height: 1.7;
+  line-height: 1.8;
   color: #ffffff;
 }
 
 .footer-brand-desc {
-  margin: 0.6rem 0 0;
-  font-size: 0.92rem;
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
   font-weight: 400;
   line-height: 2;
-  color: rgba(255, 255, 255, 0.78);
-  max-width: 360px;
+  color: rgba(255, 255, 255, 0.74);
+  max-width: 340px;
 }
 
 /* ===== العناوين ===== */
 .footer-heading {
-  margin: 0 0 1.3rem;
-  font-size: 1.1rem;
+  margin: 0 0 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #ffffff;
   position: relative;
-  padding-bottom: 0.7rem;
+  padding-bottom: 0.6rem;
 }
 
 .footer-heading::after {
@@ -64,10 +70,15 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 42px;
+  /* خط أخضر فاتح مميز */
+  width: 38px;
   height: 3px;
   border-radius: 999px;
   background-color: #7ddca8;
+}
+
+.footer-heading--sub {
+  margin-top: 1.8rem;
 }
 
 /* ===== روابط التنقل ===== */
@@ -77,13 +88,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.8rem;
 }
 
 .footer-link {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   display: inline-block;
   transition: color 0.22s ease, transform 0.22s ease;
 }
@@ -101,13 +112,13 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 1rem;
 }
 
 .footer-contact-item {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .footer-contact-icon {
@@ -115,19 +126,62 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .footer-contact-text {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.22s ease;
+}
+
+a.footer-contact-text:hover,
+a.footer-contact-text:focus-visible {
+  color: #ffffff;
+}
+
+/* ===== الأزرار الأيقونية (اجتماعي + أدوات الوصول) ===== */
+.footer-socials,
+.footer-access {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.footer-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  font-size: 1.05rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.22s ease, color 0.22s ease,
+    border-color 0.22s ease, transform 0.22s ease;
+}
+
+.footer-icon-btn:hover,
+.footer-icon-btn:focus-visible {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #0c5a36;
+  transform: translateY(-3px);
 }
 
 /* ===== الشريط السفلي ===== */
@@ -137,55 +191,69 @@
   justify-content: space-between;
   gap: 1.25rem;
   flex-wrap: wrap;
-  padding: 1.6rem 0;
+  padding: 1.4rem 0;
+  margin-top: 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.footer-copy {
-  margin: 0;
-  font-size: 0.86rem;
-  color: rgba(255, 255, 255, 0.72);
+.footer-bottom-brand {
+  display: inline-flex;
+  align-items: center;
 }
 
-/* ===== الأيقونات الاجتماعية ===== */
-.footer-socials {
+.footer-bottom-logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-legal {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 0.75rem;
-}
-
-.footer-social {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #ffffff;
-  font-size: 1.05rem;
-  text-decoration: none;
-  transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
+  flex-wrap: wrap;
+  gap: 1.4rem;
 }
 
-.footer-social:hover,
-.footer-social:focus-visible {
-  background-color: #ffffff;
-  color: #0f5132;
-  transform: translateY(-3px);
+.footer-legal-link {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  font-size: 0.86rem;
+  transition: color 0.22s ease;
+}
+
+.footer-legal-link:hover,
+.footer-legal-link:focus-visible {
+  color: #ffffff;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.66);
 }
 
 /* ===== الاستجابة ===== */
+@media (max-width: 991.98px) {
+  .footer-heading--sub {
+    margin-top: 1.4rem;
+  }
+}
+
 @media (max-width: 575.98px) {
   .site-footer {
-    padding-top: 48px;
+    padding-top: 40px;
   }
 
   .footer-bottom {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+  }
+
+  .footer-legal {
+    justify-content: center;
   }
 }
