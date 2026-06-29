@@ -1,0 +1,40 @@
+@model List<Task01.Models.ConferenceObjective>
+@{
+    ViewData["Title"] = "أهداف المؤتمر";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0">أهداف المؤتمر</h1>
+    <a class="btn btn-success" asp-area="Admin" asp-controller="Objectives" asp-action="Create"><i class="bi bi-plus-lg"></i> إضافة هدف</a>
+</div>
+
+<div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-striped align-middle mb-0">
+            <thead class="table-light">
+                <tr><th>الترتيب</th><th>العنوان</th><th>الوصف</th><th></th></tr>
+            </thead>
+            <tbody>
+            @if (Model.Count == 0)
+            {
+                <tr><td colspan="4" class="text-center text-muted py-4">لا توجد أهداف.</td></tr>
+            }
+            @foreach (var o in Model)
+            {
+                <tr>
+                    <td>@o.Order</td>
+                    <td>@o.Title</td>
+                    <td class="text-muted">@o.Description</td>
+                    <td class="text-end text-nowrap">
+                        <a class="btn btn-sm btn-outline-primary" asp-area="Admin" asp-controller="Objectives" asp-action="Edit" asp-route-id="@o.Id">تعديل</a>
+                        <form asp-area="Admin" asp-controller="Objectives" asp-action="Delete" asp-route-id="@o.Id" method="post" class="d-inline" onsubmit="return confirm('حذف هذا الهدف؟');">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-sm btn-outline-danger">حذف</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

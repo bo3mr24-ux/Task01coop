@@ -1,0 +1,30 @@
+@model Task01.Models.ConferenceObjective
+
+<div class="card border-0 shadow-sm">
+    <div class="card-body p-4">
+        <form method="post" class="row g-3">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="Id" />
+
+            <div class="col-md-8">
+                <label asp-for="Title" class="form-label">العنوان</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger small"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Order" class="form-label">الترتيب</label>
+                <input asp-for="Order" type="number" class="form-control" />
+                <span asp-validation-for="Order" class="text-danger small"></span>
+            </div>
+            <div class="col-12">
+                <label asp-for="Description" class="form-label">الوصف</label>
+                <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Description" class="text-danger small"></span>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-success">حفظ</button>
+                <a class="btn btn-outline-secondary" asp-area="Admin" asp-controller="Objectives" asp-action="Index">رجوع</a>
+            </div>
+        </form>
+    </div>
+</div>

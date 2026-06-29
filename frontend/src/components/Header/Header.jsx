@@ -9,7 +9,7 @@ const NAV_ITEMS = [
     label: "المؤتمر",
     children: [
       { label: "عن المؤتمر", to: "/about" },
-      { label: "أهداف المؤتمر", href: "#" },
+      { label: "أهداف المؤتمر", href: "#conference-objectives" },
       { label: "محاور المؤتمر", href: "#" },
     ],
   },

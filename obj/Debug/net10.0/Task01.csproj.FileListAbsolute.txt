@@ -467,5 +467,5 @@ C:\Coop\Task01coop\obj\Debug\net10.0\Task01.genruntimeconfig.cache
 C:\Coop\Task01coop\obj\Debug\net10.0\ref\Task01.dll
 C:\Users\user\Desktop\الريTask\Task01\task01\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\user\Desktop\الريTask\Task01\task01\obj\Debug\net10.0\compressed\2h1o0m88js-{0}-766w5i5yly-766w5i5yly.gz
-C:\Users\user\Desktop\الريTask\Task01\task01\obj\Debug\net10.0\compressed\lssrs59v6l-{0}-z2v6mgv859-z2v6mgv859.gz
-C:\Users\user\Desktop\الريTask\Task01\task01\obj\Debug\net10.0\compressed\mxhjm2olul-{0}-s7xek84hjb-s7xek84hjb.gz
+C:\Users\user\Desktop\الريTask\Task01\task01\obj\Debug\net10.0\compressed\mxhjm2olul-{0}-ofwhwuclz7-ofwhwuclz7.gz
+C:\Users\user\Desktop\الريTask\Task01\task01\obj\Debug\net10.0\compressed\lssrs59v6l-{0}-acuwjpj33k-acuwjpj33k.gz

@@ -67,4 +67,16 @@ public class ContentController : ControllerBase
 
         return Ok(speakers);
     }
+
+    // GET /api/content/objectives  -> ordered by Order ascending
+    [HttpGet("objectives")]
+    public async Task<IActionResult> Objectives()
+    {
+        var objectives = await _db.ConferenceObjectives
+            .OrderBy(x => x.Order)
+            .Select(o => new { id = o.Id, title = o.Title, description = o.Description, order = o.Order })
+            .ToListAsync();
+
+        return Ok(objectives);
+    }
 }

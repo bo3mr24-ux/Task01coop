@@ -19,4 +19,5 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     public DbSet<AboutConference> AboutConferences => Set<AboutConference>();
     public DbSet<AgendaItem> AgendaItems => Set<AgendaItem>();
     public DbSet<Speaker> Speakers => Set<Speaker>();
+    public DbSet<ConferenceObjective> ConferenceObjectives => Set<ConferenceObjective>();
 }

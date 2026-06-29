@@ -1,0 +1,79 @@
+/* ===== قسم أهداف المؤتمر — خلفية فاتحة، بطاقات بيضاء ===== */
+.objectives-section {
+  padding: 90px 0 100px;
+  background-color: #f6f9f7;
+  font-family: var(--dga-font);
+}
+
+/* رأس القسم — نفس نمط عنوان "عن المؤتمر" تماماً (الحجم/اللون/المحاذاة/المسافات/الخط الزخرفي) */
+.objectives-head {
+  text-align: right;
+  margin-bottom: 2.75rem;
+}
+
+.objectives-section-title {
+  margin: 0 0 1.1rem;
+  color: #111111;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  line-height: 1.3;
+}
+
+.objectives-section-divider {
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: 0;
+  border-radius: 999px;
+  background-color: var(--dga-primary);
+}
+
+/* ===== البطاقات ===== */
+.objective-card {
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid #eef2ef;
+  border-radius: var(--dga-radius, 16px);
+  box-shadow: var(--dga-shadow-sm, 0 6px 18px rgba(16, 25, 40, 0.06));
+  padding: 1.75rem 1.6rem;
+  text-align: right;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.objective-card:hover {
+  box-shadow: var(--dga-shadow-md, 0 14px 32px rgba(16, 25, 40, 0.1));
+  transform: translateY(-3px);
+}
+
+.objective-card-title {
+  margin: 0 0 0.85rem;
+  color: var(--dga-primary, #1b8354);
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.objective-card-text {
+  margin: 0;
+  color: #444444;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2;
+}
+
+/* ===== الاستجابة ===== */
+@media (max-width: 991.98px) {
+  .objectives-section {
+    padding: 65px 0 75px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .objectives-section {
+    padding: 50px 0 60px;
+  }
+
+  .objectives-section-title {
+    font-size: 1.75rem;
+  }
+}

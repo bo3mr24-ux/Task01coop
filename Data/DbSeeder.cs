@@ -116,6 +116,32 @@ public static class DbSeeder
                 db.Speakers.Add(new Speaker { Name = speakers[i].Name, Title = speakers[i].Title, Order = i });
         }
 
+        if (!await db.ConferenceObjectives.AnyAsync())
+        {
+            var objectives = new (string Title, string Description)[]
+            {
+                ("حلول مستدامة",
+                    "حلول مستدامة لإدارة الموارد المائية المتاحة وتعظيم الاستفادة من المصادر المتجددة لمواجهة زيادة الطلب على المياه في القطاع الزراعي."),
+                ("تعزيز التقنيات الحديثة",
+                    "تعزيز الاعتماد على نظم الري الحديثة والتقنيات الذكية لمواجهة التحديات المائية بأساليب مبتكرة."),
+                ("توفير منصة",
+                    "توفير منصة للمهنيين بالري والصرف والتوعية لتبادل الخبرات والمعرفة وخلق الشراكات."),
+                ("حلول لمواجهة آثار المناخ",
+                    "تقديم حلول لمواجهة آثار تغير المناخ ومدى تأثيره على الموارد المائية واستدامة المياه في قطاع الري."),
+                ("إدارة مياه الري والصرف",
+                    "دعم وتنفيذ سياسات الإدارة المتكاملة لمياه الري وتحسين الطلب والاستهلاك وتحقيق التنمية الاقتصادية والاجتماعية والبيئية."),
+            };
+            for (int i = 0; i < objectives.Length; i++)
+                db.ConferenceObjectives.Add(new ConferenceObjective
+                {
+                    Title = objectives[i].Title,
+                    Description = objectives[i].Description,
+                    Order = i,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                });
+        }
+
         await db.SaveChangesAsync();
     }
 }
